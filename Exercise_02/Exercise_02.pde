@@ -20,15 +20,19 @@ void setup() {
   xicecream = 50; 
   yicecream = 555;
   
+  img4 = loadImage("blue.png");
+  
 }
 
 void draw() {
   
   background(125, 212, 231); // set the background/RGB color - SkyBlue
   image(img2, 300, 450); // set a position for the picture/img2.
-    
+  image(img4, 0, 0); 
+  
   xzombie += speedX; // the speed for the pictures.
   xicecream += speedX;
+  
   if (xzombie > width || xicecream > width ) { //
     speedX *= -1;// img in a positive position and .
   } 
@@ -39,7 +43,7 @@ void draw() {
   
   image(img, xzombie, yzombie, 168, 240);
   image(img3, xicecream, yicecream, 230, 240);
-  image(img1, mouseX, mouseY, 20, 20);
+  image(img1, mouseX, mouseY, 30, 30);
   
   fill(255, 239, 0);
   stroke(255, 128, 0);
