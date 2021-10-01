@@ -31,24 +31,15 @@ void draw() {
   image(img5, 850, 630);
   
   PVector mousePos = new PVector(mouseX, mouseY);
-  isRunning = position.dist(mousePos) < 100;
-    
-  
+  isRunning = position.dist(mousePos) < 150;
+
   if(isRunning){
+    
     img6 = img1;
-    position = position.lerp(target, 0.08);
+    position = position.lerp(target, 0.03);
+    
     if (position.dist(target) < 10) {
       target = new PVector(random(width), random(height));
-    }
-    
-    if(position.x >= 1700 || position.y >= 750){
-      position.x = width/2;
-      position.y = height/2;
-    }
-    
-    if(position.x <= 0 || position.y <= 0){
-      position.x = width/2;
-      position.y = height/2;
     }
     
   }
