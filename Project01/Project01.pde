@@ -11,7 +11,7 @@ void setup() {
   img.resize(1850, 850);
   img1 = loadImage("space.png");
   img2 = loadImage("0.png");
-  img3 = loadImage("right.png");
+  img3 = loadImage("sleep01.png");
   img4 = loadImage("left.png");
   img5 = loadImage("eat.png");
   img5.resize(250, 200);
@@ -25,13 +25,13 @@ void setup() {
 void draw() {
   
   background(img);
-  image(img2, 500, 500);
-  image(img3, 1300, 310);
-  image(img4, 100, 450);
-  image(img5, 850, 630);
+  //image(img2, 500, 500);
+  //image(img3, 1450, 480);
+  //image(img4, 100, 450);
+  //image(img5, 850, 630);
   
   PVector mousePos = new PVector(mouseX, mouseY);
-  isRunning = position.dist(mousePos) < 150;
+  isRunning = position.dist(mousePos) < 100;
 
   if(isRunning){
     
@@ -42,6 +42,29 @@ void draw() {
       target = new PVector(random(width), random(height));
     }
     
-  }
-  image(img1, position.x, position.y, 200, 235);
+    else if ((position.x >= 760 && position.y >= 700) && ( position.x <= 1000 && position.y <= 750) ) {
+      
+      img6 = img5;
+  
+}
+
+    if ((position.x >= 500 && position.y >= 500) && ( position.x <= 600 && position.y <= 600)){
+      
+      img6 = img2;
+      
+    }
+    
+    if((position.x >= 100 && position.y >= 450) && (position.x <= 200 && position.y <= 550)) {
+      
+      img6 = img4;
+    }
+    
+    else if((position.x >= 100 && position.y >= 450) && (position.x <= 200 && position.y <= 550)) {
+      
+      img6 = img3;
+    }
+}
+
+    image(img6, position.x, position.y);
+    
 }
