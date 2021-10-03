@@ -12,7 +12,7 @@ void setup() {
   img = loadImage("background05.png");// Image from the data file.
   img.resize(1850, 850); //adjusting size of the image.
   img1 = loadImage("space.png");
-  img2 = loadImage("0.png");
+  img2 = loadImage("sing.png");
   img3 = loadImage("sleep02.png");
   img4 = loadImage("left.png");
   img5 = loadImage("eat.png");
