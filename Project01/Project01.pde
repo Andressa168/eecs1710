@@ -17,8 +17,9 @@ void setup() {
   img4 = loadImage("left.png");
   img5 = loadImage("eat.png");
   img5.resize(250, 200);
+  
   img6 = loadImage("walk01.png");
-  xwalk = 1200;
+  xwalk = 1200; // Set up the position of the image - img6.
   ywalk = 600;
   
   position = new PVector(width/2, height/2);
@@ -37,22 +38,25 @@ void draw() {
   image(img6, 1200, 600);
   
   xwalk += speedX;
-  if (xwalk > 1200) {
+  if (xwalk > 1200) { //image move back anf foreward.
     
     speedX *= -1;
   } 
-  else if (xwalk < 0) {
+  else if (xwalk < 0) { //image move back anf foreward.
     
     speedX *= -1;
   }
   
-  if (xwalk == 850) {
+  if (xwalk == 850) { //Reach the position change the image.
+    
     img6 = img5;
   }
-  if (xwalk == 500) {
+  if (xwalk == 500) { //Reach the position change the image.
+    
     img6 = img2;
   }
-  if (xwalk == 110) {
+  if (xwalk == 110) { //Reach the position change the image.
+    
     xwalk = 100;
     ywalk = 450;
     img6 = img4;
@@ -93,6 +97,6 @@ void draw() {
     }
 }
 
-    image(img7, position.x, position.y);  
-    image(img6, xwalk, ywalk);  
+    image(img7, position.x, position.y); // Set up the position of the image - img7.
+    image(img6, xwalk, ywalk);  // Set up the position of the image - img6.
 }
