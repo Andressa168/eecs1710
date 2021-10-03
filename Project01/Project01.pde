@@ -39,19 +39,18 @@ void draw() {
     position = position.lerp(target, 0.03);
     
     if (position.dist(target) < 10) {
+      
       target = new PVector(random(width), random(height));
     }
         
-    else if ((position.x >= 630 && position.y >= 530) && ( position.x <= 1130 && position.y <= 730) ){
+    else if ((position.x >= 630 && position.y >= 530) && ( position.x <= 1130 && position.y <= 730) ) {
       
       img6 = img5;
-  
 }
 
-    if ((position.x >= 200 && position.y >= 450) && ( position.x <= 550 && position.y <= 600)){
+    if ((position.x >= 200 && position.y >= 450) && ( position.x <= 550 && position.y <= 600)) {
       
       img6 = img2;
-      
     }
     
     else if ((position.x >= 100 && position.y >= 450) && (position.x <= 200 && position.y <= 500)) {
@@ -65,6 +64,5 @@ void draw() {
     }
 }
 
-    image(img6, position.x, position.y);
-    
+    image(img6, position.x, position.y);  
 }
