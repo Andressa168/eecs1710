@@ -3,7 +3,7 @@ PVector position, target;
 boolean isRunning = false;
 float xwalk;
 float ywalk;
-float speedX = 2;
+float speedX = 1;
 
 void setup() {
   
@@ -35,33 +35,16 @@ void draw() {
   //image(img3, 1450, 480);
   //image(img4, 100, 450);
   //image(img5, 850, 630);
-  image(img6, 1200, 600);
   
   xwalk += speedX;
   if (xwalk > 1200) { //image move back anf foreward.
     
     speedX *= -1;
   } 
-  else if (xwalk < 0) { //image move back anf foreward.
+  else if (xwalk < 130) { //image move back anf foreward.
     
     speedX *= -1;
   }
-  
-  if (xwalk == 850) { //Reach the position change the image.
-    
-    img6 = img5;
-  }
-  if (xwalk == 500) { //Reach the position change the image.
-    
-    img6 = img2;
-  }
-  if (xwalk == 110) { //Reach the position change the image.
-    
-    xwalk = 100;
-    ywalk = 450;
-    img6 = img4;
-  }
-  
   
   PVector mousePos = new PVector(mouseX, mouseY);
   isRunning = position.dist(mousePos) < 100;
