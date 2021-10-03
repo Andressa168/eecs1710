@@ -72,9 +72,9 @@ void draw() {
       target = new PVector(random(width), random(height));
     }
         
-    else if ((position.x >= 630 && position.y >= 530) && ( position.x <= 1130 && position.y <= 730) ) {
+    else if ((position.x >= 630 && position.y >= 530) && ( position.x <= 1130 && position.y <= 730)) {
       
-      img7 = img5;
+      img7 = img5; //Reach the position change the image.
 }
 
     if ((position.x >= 200 && position.y >= 450) && ( position.x <= 550 && position.y <= 600)) {
@@ -84,12 +84,12 @@ void draw() {
     
     else if ((position.x >= 100 && position.y >= 450) && (position.x <= 200 && position.y <= 500)) {
       
-      img7 = img4;
+      img7 = img4; //Reach the position change the image.
     }
     
     if ((position.x >= 1300 && position.y >= 400) && (position.x <= 1650 && position.y <= 500)) {
       
-      img7 = img3;
+      img7 = img3; //Reach the position change the image.
     }
 }
 
