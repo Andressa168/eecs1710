@@ -79,14 +79,14 @@ void draw() {
   fill(0);
   stroke(outlineCol);
   line(0, 0, 0, -lengthMinuteHand);
-  ellipse(0, -lengthMinuteHand, 10,10);
+  image(img2, -30, -lengthMinuteHand, 60, 50);//ellipse(0, -lengthMinuteHand, 10,10);
   popMatrix();
   
   pushMatrix();
   translate(width/2, height/2);
   rotate(rotHours);
   line(0, 0, 0, -lengthHourHand);
-  ellipse(0, -lengthHourHand, 10,10);
+  image(img3, -15, -lengthHourHand, 30, 30);//ellipse(0, -lengthHourHand, 10,10);
   popMatrix();
   
   fill(faceCol);
