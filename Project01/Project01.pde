@@ -36,7 +36,7 @@ void draw() {
     foods[i].run();
   }
   
-  float targetX = mouseX;
+  float targetX = mouseX; //Reference from Processing "easing".
   float dx = targetX - x;
   x += dx * easing;
   
