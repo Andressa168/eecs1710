@@ -1,9 +1,10 @@
-PImage img, img1, img2, img3, img4, img5, img6, img7, img8;
-PVector target;
+PImage img, img1, img2, img3, img4, img5, img6, img7;
+PVector position, target;
+boolean isRunning = false;
 float x;
 float y;
 float easing = 0.05;
-int numFoods = 30;
+int numFoods = 5;
 Food[] foods = new Food[numFoods];
 
 void setup() {
@@ -23,16 +24,21 @@ void setup() {
   
   img7 = loadImage("cream.png");
   
+  position = new PVector(width/2, height/2);
+  target = new PVector(random(width), random(height));  
+  
   for (int i=0; i<foods.length; i++) {
     foods[i] = new Food(random(width), random(height));
   }
+  
+  
 }
 
 void draw() {
   
   background(img);
   
-      for (int i=0; i<foods.length; i++) {
+  for (int i=0; i<foods.length; i++) {
     foods[i].run();
   }
   
@@ -69,8 +75,6 @@ void draw() {
       img6 = img1;
     }
     
-     image(img6, x, y, 103, 125);
-}
-
-
+    image(img6, x, y, 123, 145);
+   }
     

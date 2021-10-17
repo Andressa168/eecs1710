@@ -1,24 +1,28 @@
 class Food {
   
   PVector position;
-  float sizeIcecream;
-  boolean alive = true;
   
   Food(float x, float y) {
     position = new PVector(x, y);
-    sizeIcecream = random(30, 60);
   }
   
-  void update() {
+    void update() {
     // TODO
   }
   
-  void draw() {
-    if (alive) {
-      
-      image(img7, position.x, position.y, sizeIcecream, sizeIcecream );
+   void draw() {
+   
+     PVector mousePos = new PVector(mouseX, mouseY);
+     isRunning = position.dist(mousePos) < 200;
+  
+   if (isRunning) {
+    position = position.lerp(target, 0.05);
+    if (position.dist(target) < 25) {
+      target = new PVector(random(width), random(height));
     }
   }
+  image(img7, position.x, position.y, 70, 80);
+   }
   
   void run() {
     update();
