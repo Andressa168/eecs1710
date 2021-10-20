@@ -33,10 +33,6 @@ class Player {
     }
     image(img, position.x, position.y, 100, 120);
     
-    if (debug) {
-
-      image(img3, player.position.x, player.position.y, crashRange, crashRange);
-    }
   }
   
   void run() {

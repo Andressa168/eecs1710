@@ -9,7 +9,7 @@ class Star {
   
   Star() {
     float pickSide = random(1);
-    float y = random(yMargin, height-yMargin);
+    float y = random(yMargin, height-yMargin*2);
     float x1, x2;
     if (pickSide < 0.5) {
       isLeft = true;
@@ -30,13 +30,11 @@ class Star {
   }
   
   void draw() {
-    
-    image(img2, position.x, position.y, 150, 40);
-    
-    if (debug) {
-      
-      image(img2, position.x, position.y, 10, 10);
-    }
+    pushMatrix();
+    translate(position.x, position.y);
+    rotate(radians(random(360)));
+    image(img2, 50, 50);
+    popMatrix();
   }
   
   void run() {
