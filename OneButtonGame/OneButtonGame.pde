@@ -34,19 +34,10 @@ void setup() {
 
 void draw() {
   background(img1);
+  text("Score: " + score, 0, fontSize);
   
   int t = millis();
-  currentTime = abs(timeLimit - int(t/1000));
-  
-  int t1 = millis();
-  score = abs(timeLimit - int(t1/1000));
-  
-  fill(255);
-  text(currentTime, 10, fontSize);
-  text(score, 1130, fontSize);
-  
   int t3 = millis();
-  
   if (t3 > markTime + starInterval) {
     stars.add(new Star());
     markTime = t;
@@ -56,8 +47,13 @@ void draw() {
   
    for (Star stars : stars) {
     stars.run();
-   }
- 
+     if (debug) {
+      image(img3, stars.position.x, stars.position.y, player.position.x, player.position.y);
+    }
+    if (player.position.dist(stars.position) < crashRange) player.alive = false;
+  }
+  
+  player.run();
    
   for (int i=stars.size()-1; i>=0; i--) {
     if (!stars.get(i).alive) {

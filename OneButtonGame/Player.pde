@@ -27,12 +27,12 @@ class Player {
   void draw() {
 
     if (alive) {
-      img3 = img;
+      image(img, position.x, position.y, 100, 120);
     } else {
-      img = img3;
-    }
-    image(img, position.x, position.y, 100, 120);
-    
+      image(img3, position.x, position.y, 100, 120);
+      position.x = 630;
+      position.y = 785;
+    } 
   }
   
   void run() {

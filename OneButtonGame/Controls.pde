@@ -1,6 +1,7 @@
 void keyPressed() {
   if (key == ' ') {
-    player.moveForward(); 
+    player.moveForward();
+    score++;
   } else if (key == 'd') { // toggle debug mode
     debug = !debug;
   } else if (key == 'r') { // reset

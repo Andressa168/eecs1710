@@ -27,12 +27,12 @@ class Star {
    void update() {
     position.lerp(target, movementSpeed);
     if (position.dist(target) < 5) alive = false;
+    
   }
   
   void draw() {
     pushMatrix();
     translate(position.x, position.y);
-    rotate(radians(random(360)));
     image(img2, 50, 50);
     popMatrix();
   }
