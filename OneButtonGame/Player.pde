@@ -18,6 +18,7 @@ class Player {
   
   void moveForward() {
     target.y -= movementStep;
+    score++;
   }
   
   void update() {
@@ -27,11 +28,21 @@ class Player {
   void draw() {
 
     if (alive) {
+      
       image(img, position.x, position.y, 100, 120);
-    } else {
+    }
+    else {
       image(img3, position.x, position.y, 100, 120);
+      position.x = 550;
+      position.y = height/2;
+      text(" Try Again ", width/2, height/2, fontSize);
+    } 
+    
+     if (player.position.x == 600 && player.position.y <= 50) {
+      
       position.x = 630;
-      position.y = 785;
+      position.y = 780;
+      image(img, position.x, position.y, 100, 120);
     } 
   }
   
