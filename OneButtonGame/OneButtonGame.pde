@@ -34,11 +34,6 @@ void setup() {
 
 void draw() {
   background(img1);
-  
-  if(score == 100){
-    text("Congratulation!!! ", width/2, height/2, fontSize);
-
-  }
   text("Score: " + score , 0, fontSize);
   
   int t = millis();
