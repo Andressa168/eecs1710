@@ -5,4 +5,4 @@ void keyPressed() {
  else if (key == 'r') { // reset
     player.init();
   }
-}
+  }
