@@ -1,6 +1,8 @@
 void keyPressed() {
-  if (key == ' ') {
+  if (key == ' ' ) {
     player.moveForward();
-    
+  } 
+ else if (key == 'r') { // reset
+    player.init();
   }
-  }
+}

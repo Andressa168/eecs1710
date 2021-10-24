@@ -20,7 +20,7 @@ class Player {
     target.y -= movementStep;
     score++;
   }
-  
+ 
   void update() {
     position.lerp(target, movementSpeed);
   }
@@ -38,12 +38,11 @@ class Player {
       text(" Try Again ", width/2, height/2, fontSize);
     } 
     
-     if (player.position.x == 600 && player.position.y <= 50) {
-      
-      position.x = 630;
-      position.y = 780;
-      image(img, position.x, position.y, 100, 120);
-    } 
+     if (player.position.x <= 1200 && player.position.y <= 50) {
+      target.y += movementStep;
+      player.position.x = width/2;
+      player.position.y = 780;
+  }
   }
   
   void run() {

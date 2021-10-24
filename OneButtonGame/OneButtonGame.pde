@@ -50,17 +50,6 @@ void draw() {
 
    for (Star stars : stars) {
     stars.run();
-     /*if (debug) {
-       
-       if (position.x == 650 && position.y == 0) {
-      
-      position.x = 630;
-      position.y = 780;
-      image(img, position.x, position.y, 100, 120);
-    } 
-       
-      image(img3, stars.position.x, stars.position.y, player.position.x, player.position.y);
-    }*/
     
     if (player.position.dist(stars.position) < crashRange) player.alive = false;
   }
