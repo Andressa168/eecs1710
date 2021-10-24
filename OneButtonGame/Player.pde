@@ -17,9 +17,9 @@ class Player {
   }
   
   void moveForward() {
-    target.y -= movementStep;
-    score++;
-  }
+     target.y -= movementStep;
+     score++;
+    }
  
   void update() {
     position.lerp(target, movementSpeed);
@@ -39,9 +39,9 @@ class Player {
     } 
     
      if (player.position.x <= 1200 && player.position.y <= 50) {
-      target.y += movementStep;
-      player.position.x = width/2;
-      player.position.y = 780;
+     
+      target.x = random(width);
+      target.y = 780;
   }
   }
   
