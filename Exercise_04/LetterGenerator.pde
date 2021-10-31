@@ -1,6 +1,6 @@
 class LetterGenerator {
   
-  PShape a, b, c;
+  PShape a, b, c, e, k;
   ArrayList<Letter> letters;
   PVector position;
   float offset = 150;
@@ -26,6 +26,12 @@ class LetterGenerator {
         case 'c':
           letters.add(new Letter(c, px, py));
           break;
+          case'e':
+          letters.add(new Letter(e, px, py));
+          break;
+          case'k':
+          letters.add(new Letter(k, px, py));
+          break;
       }
     }
     
@@ -35,6 +41,7 @@ class LetterGenerator {
     a = createShape();
     a.beginShape();
     a.translate(170, 10);
+    a.texture(orange);
     a.vertex(4.288147, -3.430542);
     a.vertex(-175.81473, 353.3448);
     a.vertex(-43.739258, 220.41168);
@@ -77,6 +84,41 @@ class LetterGenerator {
     c.vertex(-127.78732, 246.99829);
     c.vertex(-146.65524, 21.440826);
     c.endShape(CLOSE);
+   
+    e = createShape();
+    e.beginShape();
+    e.texture(orange);
+    e.vertex(0.0, 0.0);
+    e.vertex(267.68646, -0.95602417);
+    e.vertex(267.68646, 89.86615);
+    e.vertex(89.866165, 88.910126);
+    e.vertex(88.91014, 178.77628);
+    e.vertex(266.7304, 180.68832);
+    e.vertex(265.7744, 239.96176);
+    e.vertex(87.95412, 239.00574);
+    e.vertex(89.866165, 313.57553);
+    e.vertex(268.64246, 312.61948);
+    e.vertex(270.5545, 390.05734);
+    e.vertex(-0.95602417, 391.0134);
+    e.endShape(CLOSE);
+    
+    
+    k = createShape();
+    translate(215.53537, 277.24664);
+    k.beginShape();
+    k.vertex(-0.95602417, -91.77821);
+    k.vertex(-1.9120483, 360.42062);
+    k.vertex(58.317413, 359.46466);
+    k.vertex(53.537292, 244.74188);
+    k.vertex(269.59848, 310.70746);
+    k.vertex(271.51053, 260.99426);
+    k.vertex(53.537292, 172.08414);
+    k.vertex(205.54495, 37.284912);
+    k.vertex(241.87381, 2.8680725);
+    k.vertex(53.537292, 79.349915);
+    k.vertex(55.44934, -96.558304);
+    k.endShape(CLOSE);
+
   }
   
   void update() {

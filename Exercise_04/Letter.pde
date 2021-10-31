@@ -20,8 +20,12 @@ class Letter {
   }
   
   void draw() {
-    shapeMode(CENTER);
-    shape(s, position.x, position.y);
+    
+    pg.pushMatrix();
+    pg.shapeMode(CENTER);
+    pg.translate(position.x, position.y, position.z);
+    pg.shape(s, 0, 0);
+    pg.popMatrix();
   }
   
   void run() {
