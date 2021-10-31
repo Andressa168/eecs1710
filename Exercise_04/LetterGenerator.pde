@@ -110,7 +110,6 @@ class LetterGenerator {
     e.vertex(-0.95602417, 391.0134);
     e.endShape(CLOSE);
     
-    
     k = createShape();
     translate(215.53537, 277.24664);
     k.beginShape();
