@@ -41,7 +41,9 @@ class LetterGenerator {
     a = createShape();
     a.beginShape();
     a.translate(170, 10);
-    a.texture(orange);
+    a.fill(0,255,255);
+    a.vertex(4, -3);
+    a.fill(204, 204, 255);
     a.vertex(4.288147, -3.430542);
     a.vertex(-175.81473, 353.3448);
     a.vertex(-43.739258, 220.41168);
@@ -57,6 +59,9 @@ class LetterGenerator {
     b = createShape();
     b.beginShape();
     b.translate(50, 10);
+    b.fill(255, 102, 102);
+    b.vertex(10, -5);
+    b.fill(255, 204, 255);
     b.vertex(0.0, 0.0);
     b.vertex(-11.149227, 313.036);
     b.vertex(202.40138, 230.70326);
@@ -77,6 +82,9 @@ class LetterGenerator {
     c = createShape();
     c.beginShape();
     c.translate(220, 0);
+    c.fill(76, 0, 153);
+    c.vertex(4, -50);
+    c.fill(102, 255, 178);
     c.vertex(0.0, 0.0);
     c.vertex(-177.53003, -7.718689);
     c.vertex(-168.9537, 282.16125);
@@ -87,7 +95,7 @@ class LetterGenerator {
    
     e = createShape();
     e.beginShape();
-    e.texture(orange);
+    e.texture(iphone);
     e.vertex(0.0, 0.0);
     e.vertex(267.68646, -0.95602417);
     e.vertex(267.68646, 89.86615);
@@ -106,6 +114,7 @@ class LetterGenerator {
     k = createShape();
     translate(215.53537, 277.24664);
     k.beginShape();
+    k.texture(orange);
     k.vertex(-0.95602417, -91.77821);
     k.vertex(-1.9120483, 360.42062);
     k.vertex(58.317413, 359.46466);

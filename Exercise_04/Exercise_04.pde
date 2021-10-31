@@ -1,6 +1,6 @@
 LetterGenerator lg;
 String input = "abcbaecke";
-PImage orange;
+PImage orange, iphone;
 PGraphics pg;
 
 int scaler = 4;
@@ -10,6 +10,7 @@ void setup() {
   size(1200, 800, P3D);
   
   orange = loadImage("Orange.jpg");
+  iphone = loadImage("iphone.jpg");
   
   lg = new LetterGenerator(input, 0, height/2);
   
@@ -20,7 +21,7 @@ void setup() {
 void draw() {
   
   pg.beginDraw();
-  pg.background(127);
+  pg.background(224);
   pg.scale(scaler_f);
   
   lg.run(); 
