@@ -39,24 +39,25 @@ void setup() {
 void draw() { 
   background(255);
   
-  int index1 = int(random(1, 100));
+  /*int index1 = int(random(1, 100));
   int index2 = int(random(1, 100));
   int index3 = int(random(1, 100));
   
-  for (int i=0; i<img.pixels.length; i++) {
+  for (int i=0; i<img1.pixels.length; i++) {
     if (i % index1 == 0) {
-      img.pixels[i] = color(255,0,0);
+      img1.pixels[i] = color(255,0,0);
     } else if (i % index2 == 0) {
-      img.pixels[i] = color(0,255,0);
+      img1.pixels[i] = color(0,255,0);
     } else if (i % index3 == 0) {
-      img.pixels[i] = color(0,0,255);
+      img1.pixels[i] = color(0,0,255);
     } else {
-      img.pixels[i] = img.pixels[i];    
+      img1.pixels[i] = img1.pixels[i];    
     }
   }
-  img.updatePixels();
   
-  image(img, 0, 0);
+  img1.updatePixels();
+  
+  image(img1, 0, 0);*/
   
   for (Dot dot : dots) {
     dot.run();
