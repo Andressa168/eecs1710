@@ -19,7 +19,7 @@ class Dot {
   void draw() {
     noStroke();
     color c = img.get(int(position.x), int(position.y));
-    fill(c, 10);
+    fill(c,25);
     ellipse(position.x, position.y, 10, 10);
   }
   

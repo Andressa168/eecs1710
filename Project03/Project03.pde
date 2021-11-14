@@ -4,7 +4,7 @@ Dot[] dots;
 
 float gravity = 0.5;
 float gravityDelta = 0.01;
-float friction = 0.99;
+float friction = 0.7;
 
 void setup() {
   background(255);
@@ -33,7 +33,7 @@ void draw() {
     color c = img.get(int(x), int(y));
     fill(c, 5);
     noStroke();
-    ellipse(x, y, random(20), random(20));
+    ellipse(x, y, 20, 20);
   }
 
  }
