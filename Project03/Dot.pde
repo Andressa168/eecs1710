@@ -1,33 +1,33 @@
 class Dot {
-
-  PVector position, target;
-  color col;
-  float speed;
-  float dotSize;
   
-  Dot(float x, float y, color _col) {
+  PVector position;
+  PVector speed;
+  int timestamp;
+  
+  Dot(float x, float y) {
     position = new PVector(x, y);
-    target = new PVector(random(width), random(height));
-    col = _col;
-    
-    float b = brightness(col) / 255;
-    speed = b / 100;
-    dotSize = abs(10 - (b * 10)) + 2;
+    timestamp = millis();
+    speed = new PVector(random(-1, 1), random(-1, 2));
   }
   
   void update() {
-    position.lerp(target, speed);
+    position.add(speed);
+    position.y += gravity;
+    speed.mult(friction);
+    position.y = constrain(position.y, 0, floor);
   }
   
   void draw() {
-    stroke(col);
-    strokeWeight(dotSize);
-    point(position.x, position.y);
+    noStroke();
+    color c = img.get(int(position.x), int(position.y));
+    fill(c, 10);
+    ellipse(position.x, position.y, 10, 10);
   }
   
   void run() {
     update();
-    draw();
+    draw();  
   }
+  
 
 }
