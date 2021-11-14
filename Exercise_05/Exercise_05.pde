@@ -1,6 +1,9 @@
+import processing.sound.*;
 PImage img, img1, img2, img3, img4;
 Player player;
 ArrayList<Star> stars;
+
+SoundFile bgm;
 
 int timeLimit = 60;
 int currentTime = 0;
@@ -16,13 +19,17 @@ int fontSize = 48;
 void setup() {
   
   size(1200, 800, P2D);
+  
+  bgm = new SoundFile(this, "PlantsVsZombies.mp3");
+  bgm.play();  
+     
   img1 = loadImage("sky.jpg");
   img1.resize(1200, 800);
   
   img = loadImage("space.png");
   img2 = loadImage("star.png");
   img2.resize(50, 50);
-  img3 = loadImage("cry.png");
+  img3 = loadImage("cry.png");  
 
   font = createFont("Arial", fontSize);
   textFont(font, fontSize);
