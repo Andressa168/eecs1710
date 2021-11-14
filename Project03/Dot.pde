@@ -14,7 +14,6 @@ class Dot {
     position.add(speed);
     position.y += gravity;
     speed.mult(friction);
-    position.y = constrain(position.y, 0, floor);
   }
   
   void draw() {

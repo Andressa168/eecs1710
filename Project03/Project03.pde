@@ -2,17 +2,15 @@ PImage img;
 int numDots = 3000;
 Dot[] dots;
 
-float gravity = 0.4;
+float gravity = 0.5;
 float gravityDelta = 0.01;
 float friction = 0.99;
-float floor;
 
 void setup() {
   background(255);
   size(800, 600, P2D);
   img = loadImage("0.jpg");
   surface.setSize(img.width, img.height);
-  floor = height;
   
   dots = new Dot[numDots];
   for (int i=0; i<dots.length; i++) {
@@ -21,7 +19,6 @@ void setup() {
 }
 
 void draw() {
-  
   
   for (int i=0; i<dots.length; i++) {
     dots[i].run();
@@ -34,7 +31,7 @@ void draw() {
     float x = random(width);
     float y = random(height);
     color c = img.get(int(x), int(y));
-    fill(c, 25);
+    fill(c, 5);
     noStroke();
     ellipse(x, y, random(20), random(20));
   }
