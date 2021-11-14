@@ -19,8 +19,8 @@ class Dot {
   void draw() {
     noStroke();
     color c = img.get(int(position.x), int(position.y));
-    fill(c,25);
-    ellipse(position.x, position.y, 10, 10);
+    fill(c, 25);
+    ellipse(position.x, position.y, random(10), random(20));
   }
   
   void run() {
