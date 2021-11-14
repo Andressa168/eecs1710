@@ -1,9 +1,13 @@
+import ddf.minim.*;
 import processing.sound.*;
+
 PImage img, img1, img2, img3, img4;
 Player player;
 ArrayList<Star> stars;
 
-SoundFile bgm;
+//SoundFile bgm;
+Minim minim; 
+AudioPlayer bgm; 
 
 int timeLimit = 60;
 int currentTime = 0;
@@ -20,7 +24,10 @@ void setup() {
   
   size(1200, 800, P2D);
   
-  bgm = new SoundFile(this, "PlantsVsZombies.mp3");
+  minim = new Minim(this);
+  bgm = minim.loadFile("PlantsVsZombies.mp3");
+  //bgm.play();
+  //bgm = new SoundFile(this, "PlantsVsZombies.mp3");
   bgm.play();  
      
   img1 = loadImage("sky.jpg");
