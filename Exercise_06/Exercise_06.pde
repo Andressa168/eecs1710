@@ -1,25 +1,48 @@
 import processing.video.*;
-PImage img1;
 
-Movie movie;
+Capture video;
 
 void setup() {
-  size(560, 406);
-  background(0);
+  size(640, 480);
   
-  movie = new Movie(this, "eat.mp4");
-  movie.loop();
-  movie.volume(0);
-  
-  }
+  video = new Capture(this, 640, 480);
+  video.start();
+}
 
-void movieEvent(Movie m) {
-  m.read();
+void captureEvent(Capture video) {
+  
+  video.read();
 }
 
 void draw() {
-  //if (movie.available() == true) {
-  //  movie.read(); 
-  //}
-  image(movie, 0, 0, width, height);
+  
+  loadPixels();
+  video.loadPixels();
+  
+  for(int i = 0; i < video.width; i++) {
+    for(int j = 0; j < video.height; j++) {
+      
+      int loc = i + j * video.width;
+      
+      float r = red(video.pixels[loc]);
+      float g = green(video.pixels[loc]);
+      float b = blue(video.pixels[loc]);
+      float d = dist(i, j, mouseX, mouseY);
+      float factor = map(d, 0, 100, 2, 0);
+      
+      r *= factor;
+      g *= factor;
+      b *= factor;
+      
+      r = constrain(r, 0, 255);
+      g = constrain(g, 0, 255);
+      b = constrain(b, 0, 255);
+      
+      color c = color(r, g, b);
+      pixels[loc] = c;
+   
 }
+  }
+ updatePixels();
+}
+ 
