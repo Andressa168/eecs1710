@@ -24,11 +24,11 @@ void draw() {
       
       int loc = i + j * video.width;
       
-      float r = red(video.pixels[loc]);
-      float g = green(video.pixels[loc]);
-      float b = blue(video.pixels[loc]);
+      float r = red(int(video.pixels[loc]*random(2)));
+      float g = green(int(video.pixels[loc]/0.99));
+      float b = blue(int(video.pixels[loc]*random(3)));
       float d = dist(i, j, mouseX, mouseY);
-      float factor = map(d, 0, 100, 2, 0);
+      float factor = map(d, 0, 200, 2, 0);
       
       r *= factor;
       g *= factor;
@@ -45,4 +45,3 @@ void draw() {
   }
  updatePixels();
 }
- 
