@@ -4,8 +4,6 @@ PeasyCam cam;
 PShape ps;
 PShader shader;
 float spreadVal = 0.002;
-float offset = PI/24.0;
-int i = 50;
 
 void setup() {
   size(800, 600, P3D);
