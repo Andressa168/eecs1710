@@ -3,7 +3,7 @@ import peasy.*;
 PeasyCam cam;
 PShape ps;
 PShader shader;
-float spreadVal = 0.002;
+float spreadVal = 0.003;
 
 void setup() {
   size(800, 600, P3D);
@@ -16,13 +16,13 @@ void setup() {
   shader.set("rate", 1.0);
  
   ps = loadShape("untitled.obj");
-  ps.scale((sin(0.02) * height- 10/2) + height - 10);
+  ps.scale((sin(0.02) * height- 100/2) + height - 10);
   ps.setFill(color(255, 0, 0));
   ps.setStroke(color(0, 0, 255));
 }
 
 void draw() { 
-  background(0);
+  background(mouseX, mouseY);
   
   shader.set("time", float(millis())/1000.0);
   shader(shader);
