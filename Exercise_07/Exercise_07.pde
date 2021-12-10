@@ -16,7 +16,7 @@ void setup() {
   shader.set("rate", 1.0);
  
   ps = loadShape("untitled.obj");
-  ps.scale((sin(0.02) * height- 100/2) + height - 10);
+  ps.scale((sin(0.05) * height- 10/2) + height - 10);
   ps.setFill(color(255, 0, 0));
   ps.setStroke(color(0, 0, 255));
 }
@@ -36,6 +36,7 @@ void draw() {
       PVector spread = new PVector(random(-spreadVal, spreadVal), random(-spreadVal, spreadVal), random(-spreadVal, spreadVal));
       pos.add(spread);
       child.setVertex(j, pos);
+     
     }
   }
   
