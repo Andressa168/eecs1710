@@ -1,7 +1,6 @@
 import xyscope.*;
 import ddf.minim.*; 
-AudioPlayer music;
-Minim musics;
+
 XYscope xy;
 
 void setupXYscope() {
@@ -12,7 +11,7 @@ void setupXYscope() {
 
 void updateXYscope() {
   // build audio from shapes
-  xy.buildWaves();
+  //xy.buildWaves();
 
   // draw all analytics
   //xy.drawAll();
